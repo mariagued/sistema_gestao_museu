@@ -1,6 +1,6 @@
 # 🎟️ Sistema de Venda de Ingressos para Museu
 
-Este projeto implementa o banco de dados para um sistema de venda de ingressos de museu, permitindo o controle de sessões, visitantes, compras e pagamentos. Ele foi desenvolvido com base em requisitos funcionais para garantir uma experiência fluida tanto para usuários visitantes quanto para a administração do sistema.
+Este projeto implementa o banco de dados para um sistema de venda de ingressos de museu, permitindo o controle de sessões, visitantes, compras e pagamentos. Ele ainda está sendo desenvolvido com base em requisitos funcionais para garantir uma experiência fluida tanto para usuários visitantes quanto para a administração do sistema.
 
 ## 📂 Estrutura do Projeto
 
@@ -13,6 +13,7 @@ O projeto contém o script SQL para criação das tabelas principais:
 - **pagamento**: Informações e comprovantes de pagamento.
 
 ## 📋 Requisitos do Projeto
+Este sistema tem como objetivo controlar a venda de ingressos de um museu, permitindo o registro de visitantes, controle de sessões, compras de ingressos e validação de pagamentos. Abaixo estão os requisitos funcionais divididos por módulo.
 
 ### 🧾 Requisitos de Ingresso
 
