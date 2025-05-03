@@ -44,6 +44,8 @@ Este sistema tem como objetivo controlar a venda de ingressos de um museu, permi
   - Boleto
 - Registro e validação do comprovante de pagamento.
 
+## Prototipação das Telas (em andamento)
+
 ## Modelagem Lógica
 ![modelo-logico](https://github.com/user-attachments/assets/eea52f48-c7f9-4806-b0bd-9b805e51de9c)
 
