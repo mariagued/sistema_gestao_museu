@@ -15,81 +15,67 @@ O projeto contém o script SQL para criação das tabelas principais:
 ## 📋 Requisitos do Projeto
 Este sistema tem como objetivo controlar a venda de ingressos de um museu, permitindo o registro de visitantes, controle de sessões, compras de ingressos e validação de pagamentos. Abaixo estão os requisitos funcionais divididos por módulo.
 
-### 🧾 Requisitos de Ingresso
+### 🧾 Requisitos do Projeto
 
-- Permite seleção do tipo de ingresso: **inteira** ou **meia-entrada**.
-- Usuário informa **data e hora da visita**.
-- Seleção da **quantidade de ingressos** em uma compra.
-- Registro do **valor unitário** e **valor total** da compra.
-- Informação da **sessão**: data, horário de início e término.
-
-### 👤 Requisitos de Login do Visitante
-
-- Registro das informações básicas do visitante:
-  - Nome
-  - CPF
-  - E-mail
-  - Telefone
-- Validação de documentos para meia-entrada:
-  - Número de matrícula
-  - Comprovantes de estudante (a ser integrado posteriormente)
+Requisitos do projeto
+● Permite inserção dos dados pessoais no campo login;
+● Permite a seleção do tipo de ingresso (inteira e meia-entrada);
+● Informar a data e hora da visita ao museu;
+● Usuário seleciona a quantidade de ingressos vendidos em uma compra;
+● Sistema informa o valor de cada ingresso;
+● Valor total da compra dos ingressos;
+● Sistema solicita o número da carteirinha para validar a compra caso o usuário utilize a meia-entrada;
+● Forma de pagamento (cartão de crédito, cartão débito, PIX, dinheiro, boleto…);
+● Informar se o comprovante de pagamento foi validado.
 
 ### 💳 Requisitos de Pagamento
-
 - Suporte a múltiplas formas de pagamento:
   - Cartão de crédito
   - Cartão de débito
   - PIX
   - Dinheiro
   - Boleto
-- Registro e validação do comprovante de pagamento.
+
 
 ## Prototipação das Telas (em andamento)
 
 ## Modelagem Lógica
-![modelo-logico](https://github.com/user-attachments/assets/eea52f48-c7f9-4806-b0bd-9b805e51de9c)
+![Logic model](https://github.com/user-attachments/assets/1478ae94-cb53-4293-a04c-7f3044debf68)
 
 ## 🗃️ Script de Criação das Tabelas (MySQL)
 
 ```sql
-CREATE TABLE visitante ( 
-  id_visitante INT PRIMARY KEY AUTO_INCREMENT,  
-  nome VARCHAR(255) NOT NULL,  
-  cpf VARCHAR(20) NOT NULL,  
-  email VARCHAR(255) NOT NULL,  
-  telefone VARCHAR(20) NOT NULL
-); 
+CREATE TABLE visitante (
+    id_visitante INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    data_nasc DATE NOT NULL,
+    cpf VARCHAR(11) NOT NULL UNIQUE,
+    telefone VARCHAR(15) NOT NULL,
+    email VARCHAR(255) NOT NULL
+);
 
-CREATE TABLE ingresso ( 
-  id_ingresso INT PRIMARY KEY AUTO_INCREMENT,  
-  tipo_ingresso VARCHAR(255) NOT NULL,  
-  valor_unitario FLOAT NOT NULL,  
-  quantidade INT NOT NULL
-); 
+CREATE TABLE ingresso (
+    id_ingresso INT AUTO_INCREMENT PRIMARY KEY,
+    id_sessao INT NOT NULL,
+    tipo_ingresso VARCHAR(50) NOT NULL, -- 'meia' ou 'inteira'
+    valor DECIMAL(10,2) NOT NULL,
+    quant_ingresso INT NOT NULL,
+    FOREIGN KEY (id_sessao) REFERENCES sessao(id_sessao)
+);
 
-CREATE TABLE sessao ( 
-  id_sessao INT PRIMARY KEY AUTO_INCREMENT,  
-  horario DATETIME NOT NULL,  
-  capacidade INT NOT NULL
-); 
+CREATE TABLE sessao (
+    id_sessao INT AUTO_INCREMENT PRIMARY KEY,
+    tema VARCHAR(255) NOT NULL,
+    horario DATETIME NOT NULL
+);
+ 
+CREATE TABLE pagamento (
+    id_pagamento INT AUTO_INCREMENT PRIMARY KEY,
+    id_visitante INT NOT NULL,
+    id_ingresso INT NOT NULL,
+    forma_pagamento VARCHAR(100) NOT NULL,
+    numero_carteirinha VARCHAR(20),
+    FOREIGN KEY (id_visitante) REFERENCES visitante(id_visitante),
+    FOREIGN KEY (id_ingresso) REFERENCES ingresso(id_ingresso)
+);
 
-CREATE TABLE compra ( 
-  id_compra INT PRIMARY KEY AUTO_INCREMENT,  
-  id_ingresso INT,  
-  id_visitante INT,  
-  id_sessao INT,  
-  horario DATETIME NOT NULL,  
-  valor_ingresso FLOAT NOT NULL,
-  FOREIGN KEY (id_ingresso) REFERENCES ingresso(id_ingresso),
-  FOREIGN KEY (id_visitante) REFERENCES visitante(id_visitante),
-  FOREIGN KEY (id_sessao) REFERENCES sessao(id_sessao)
-); 
-
-CREATE TABLE pagamento ( 
-  id_pagamento INT PRIMARY KEY AUTO_INCREMENT,  
-  id_compra INT,  
-  forma_pagamento VARCHAR(255) NOT NULL,  
-  comprovante VARCHAR(255) NOT NULL,  
-  data_pagamento DATE NOT NULL,
-  FOREIGN KEY (id_compra) REFERENCES compra(id_compra)
-); 
