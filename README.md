@@ -9,7 +9,6 @@ O projeto contém o script SQL para criação das tabelas principais:
 - **visitante**: Armazena dados dos usuários.
 - **ingresso**: Tipos e valores dos ingressos.
 - **sessao**: Horários e capacidade das sessões disponíveis.
-- **compra**: Registro das compras realizadas pelos visitantes.
 - **pagamento**: Informações e comprovantes de pagamento.
 
 ## 📋 Requisitos do Projeto
