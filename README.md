@@ -4,12 +4,28 @@ Este projeto implementa o banco de dados para um sistema de venda de ingressos d
 
 ## 📂 Estrutura do Projeto
 
-O projeto contém o script SQL para criação das tabelas principais:
+Parte 1:
+- Definição do tema
+- Requisitos funcionais do projeto
+- Modelo lógico contendo todas as relações entre tabelas
 
-- **visitante**: Armazena dados dos usuários.
-- **ingresso**: Tipos e valores dos ingressos.
-- **sessao**: Horários e capacidade das sessões disponíveis.
-- **pagamento**: Informações e comprovantes de pagamento.
+Parte 2:
+- Um relatório organizado com todas as funcionalidades implementadas e os respectivos códigos. (Adiciona o tópico de enunciado e um print do código logo na sequência)
+- Deve obrigatoriamente ocorrer a apresentação do projeto para defesa de código para validar o projeto.
+  
+**ITENS OBRIGATÓRIOS PARA A PARTE 2**
+1. Utilize banco de dados relacional (Postgres ou MySQL).
+2. Defina a forma de conexão e acesso aos dados:
+  a. No mínimo deve existir 3 tabelas relacionadas
+3. Implemente os métodos para inserir, editar, buscar e excluir, sendo:
+  a. Em cada tabela, insira 5 amostras de dados
+  b. Editar 3 opções diferentes de dados (independente da tabela)
+  c. Em cada tabela, apresente busque todos os campos
+  d. Exclua 2 amostras de dados em cada tabela
+4. Permita o uso de pelo menos 2 buscas utilizando diferentes JOINS (INNER, LEFT, RIGHT ou FULL)
+5. Faça pelo menos 2 buscas de dados em cada tabela utilizando diferentes funções de agregação (MAX, MIN, GROUP BY, HAVING, SUM, AVG) ou operadores de comparação (>, <, =, entre outros)
+6. Implemente 1 subquery.
+
 
 ## 📋 Requisitos do Projeto
 Este sistema tem como objetivo controlar a venda de ingressos de um museu, permitindo o registro de visitantes, controle de sessões, compras de ingressos e validação de pagamentos. Abaixo estão os requisitos funcionais divididos por módulo.
@@ -36,12 +52,16 @@ Requisitos do projeto
   - Boleto
 
 
-## Prototipação das Telas (em andamento)
-
 ## Modelagem Lógica
 ![Logic model](https://github.com/user-attachments/assets/1478ae94-cb53-4293-a04c-7f3044debf68)
 
 ## 🗃️ Script de Criação das Tabelas (MySQL)
+A seguir, o script SQL da criação das tabelas principais:
+
+- **visitante**: Armazena dados dos usuários.
+- **ingresso**: Tipos e valores dos ingressos.
+- **sessao**: Horários e capacidade das sessões disponíveis.
+- **pagamento**: Informações e comprovantes de pagamento.
 
 ```sql
 CREATE TABLE visitante (
