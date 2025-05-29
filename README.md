@@ -15,13 +15,13 @@ Parte 2:
   
 **ITENS OBRIGATÓRIOS PARA A PARTE 2**
 1. Utilize banco de dados relacional (Postgres ou MySQL).
-2. Defina a forma de conexão e acesso aos dados:
+2. Defina a forma de conexão e acesso aos dados:<br>
   a. No mínimo deve existir 3 tabelas relacionadas
-3. Implemente os métodos para inserir, editar, buscar e excluir, sendo:
-  a. Em cada tabela, insira 5 amostras de dados
-  b. Editar 3 opções diferentes de dados (independente da tabela)
-  c. Em cada tabela, apresente busque todos os campos
-  d. Exclua 2 amostras de dados em cada tabela
+3. Implemente os métodos para inserir, editar, buscar e excluir, sendo:<br>
+  a. Em cada tabela, insira 5 amostras de dados<br>
+  b. Editar 3 opções diferentes de dados (independente da tabela)<br>
+  c. Em cada tabela, apresente busque todos os campos<br>
+  d. Exclua 2 amostras de dados em cada tabela<br>
 4. Permita o uso de pelo menos 2 buscas utilizando diferentes JOINS (INNER, LEFT, RIGHT ou FULL)
 5. Faça pelo menos 2 buscas de dados em cada tabela utilizando diferentes funções de agregação (MAX, MIN, GROUP BY, HAVING, SUM, AVG) ou operadores de comparação (>, <, =, entre outros)
 6. Implemente 1 subquery.
