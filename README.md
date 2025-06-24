@@ -30,9 +30,6 @@ Parte 2:
 ## 📋 Requisitos do Projeto
 Este sistema tem como objetivo controlar a venda de ingressos de um museu, permitindo o registro de visitantes, controle de sessões, compras de ingressos e validação de pagamentos. Abaixo estão os requisitos funcionais divididos por módulo.
 
-
-### 🧾 Requisitos do Projeto
-
 - Permite inserção dos dados pessoais no campo login;
 - Permite inserção dos dados pessoais no campo login;
 - Permite a seleção do tipo de ingresso (inteira e meia-entrada);
