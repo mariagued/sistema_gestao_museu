@@ -31,7 +31,6 @@ Parte 2:
 Este sistema tem como objetivo controlar a venda de ingressos de um museu, permitindo o registro de visitantes, controle de sessões, compras de ingressos e validação de pagamentos. Abaixo estão os requisitos funcionais divididos por módulo.
 
 - Permite inserção dos dados pessoais no campo login;
-- Permite inserção dos dados pessoais no campo login;
 - Permite a seleção do tipo de ingresso (inteira e meia-entrada);
 - Informar a data e hora da visita ao museu;
 - Usuário seleciona a quantidade de ingressos vendidos em uma compra;
